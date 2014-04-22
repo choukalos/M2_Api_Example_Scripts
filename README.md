@@ -11,6 +11,7 @@ API Path
 Scripts
 - blaster_read.rb reads 1 full customer records as a get statement given the magento customer_id
 - blaster_write.rb writes n full customer records ( randomly generated ) as a post - 1 customer at a time
+- blaster_search.rb reads N full customer records as a single put statement given a json search query
 - Ignore the half written php script
 
 To setup:
@@ -30,7 +31,7 @@ then add to the path/etc and start working it.
 Some example payloads:
 Sample JSON Payloads for Customer Search
 
-Sample Payloads
+Sample Payloads - Thanks Anup!
 
 Single customer :  "condition_type": “eq"
 ============
@@ -63,6 +64,25 @@ Single customer :  "condition_type": “eq"
         "page_size": 1
     }
 }
+
+Multiple customers : updated_at example
+
+{
+	"searchCriteria": {
+		"filterGroups": [
+		  {
+			"filters":[
+			  "field":"updated_at",
+			  "value":"2014-04-21",
+			  "condition_type":"gt"
+			]
+		  }
+		],
+		"current_page":1,
+		"page_size":10
+	}
+}
+
 
 
 Single customer :  "condition_type": "like"
@@ -140,7 +160,7 @@ Multiple Customers :  "condition_type": "like"
 To create a customer it’s a POST request
 url:  http://mage2.demo1/index.php/rest/default/V1/customerAccounts
 
-Create Customer Example Payload (thanks Anup!)
+Create Customer Example Payload
 ===========================
 {
     "customerDetails": {

@@ -1,4 +1,6 @@
 <?php
+  // need to write.....
+
   // PHP script to create a slew of random customers
   // Use PECL OAuth extension
   // Variables to replace

@@ -60,19 +60,21 @@ end
 # Config and setup tokens
 config = YAML.load_file(yamlfile)
 # setup token
-client = OAuth::Consumer.new config["consumerkey"], config["consumersecret"], {:site=> config["site"] }
-token  = OAuth::AccessToken.new(client, config["token"], config["tokensecret"])
+client       = OAuth::Consumer.new config["consumerkey"], config["consumersecret"], {:site=> config["site"] }
+token        = OAuth::AccessToken.new(client, config["token"], config["tokensecret"])
+customer_ids = []
 
 # Test Scenerio - create 50 customers; read 50 customers; delete 50 customers and time it
 #
 starttime = Time.now
 url       = config["baseurl"].to_s + APIURLS["customer"].to_s
 (1..NUMBER).each do |x|
-  address    = generate_address
-  customer   = generate_customer(address)
-  http_start = Time.now
-  apicall    = token.post(url,customer,{'Content-Type' => 'application/json','Accpet' => 'application/json' })
-  http_end   = Time.now
+  address      = generate_address
+  customer     = generate_customer(address)
+  http_start   = Time.now
+  apicall      = token.post(url,customer,{'Content-Type' => 'application/json','Accpet' => 'application/json' })
+  http_end     = Time.now
+  customer_ids << JSON.parse(apicall.body)["id"].to_i
   puts "Create,#{apicall.code},#{apicall.msg},#{http_end - http_start} "
 end
 endtime = Time.now
@@ -80,7 +82,7 @@ puts "Processed #{NUMBER} create api calls in #{endtime - starttime} seconds or 
 
 #  Read calls  
 starttime = Time.now
-(1..NUMBER).each do |x|
+customer_ids.each do |x|
   url        = config["baseurl"].to_s + APIURLS["customer"].to_s + x.to_s
   http_start = Time.now
   apicall    = token.get(url,{'Content-Type' => 'application/json','Accpet' => 'application/json' })
@@ -92,7 +94,7 @@ puts "Processed #{NUMBER} read api calls in #{endtime - starttime} seconds or #{
   
 # Delete Calls
 starttime = Time.now
-(1..NUMBER).each do |x|
+customer_ids.each do |x|
   url        = config["baseurl"].to_s + APIURLS["customer"].to_s + x.to_s
   http_start = Time.now
   apicall    = token.delete(url,{'Content-Type' => 'application/json','Accpet' => 'application/json' })

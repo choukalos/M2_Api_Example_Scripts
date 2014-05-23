@@ -14,7 +14,7 @@ TOKENSECRET    = "c134285b81adafee53eca6987316c16c"
 URL = "http://mage2.local/index.php/rest/default/V1/customerAccounts/"
 
 if ARGV.count > 0
-  numtoread = ARGV.shift
+  numtoread = ARGV.shift.to_i
 else
   numtoread = nil
 end
@@ -30,8 +30,11 @@ if numtoread == nil then
 end
 
 (1..numtoread).each do |x|
-  url       = URL.to_s + x.to_s
-  puts @token.get(url,{'Content-Type' => 'application/json','Accept' => 'application/json'}).body
+  url        = URL.to_s + x.to_s
+  http_start = Time.now
+  body       = @token.get(url,{'Content-Type' => 'application/json','Accept' => 'application/json'}).body
+  http_end   = Time.now
+  puts "Read 1 record in #{http_end - http_start} seconds, data #{body}"
 end
 endtime = Time.now
 puts "Processed #{numtoread} read requests in #{endtime - starttime} seconds!"

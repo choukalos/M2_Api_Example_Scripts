@@ -110,7 +110,10 @@ starttime = Time.now
 (1..numtogen).each do |x|
   address   = generate_address
   customer  = generate_customer(address)
-  puts @token.post(URL,customer,{'Content-Type' => 'application/json','Accpet' => 'application/json' }).body
+  http_start = Time.now
+  code       = @token.post(URL,customer,{'Content-Type' => 'application/json','Accpet' => 'application/json' }).code
+  http_end   = Time.now
+  puts " -- Create customer API call status: #{code} in #{http_end - http_start} seconds"
 end
 endtime = Time.now
 puts "Processed #{numtogen} write requests in #{endtime - starttime} seconds!"

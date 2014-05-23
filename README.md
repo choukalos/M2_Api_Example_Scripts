@@ -12,11 +12,12 @@ Scripts
 - blaster_read.rb reads 1 full customer records as a get statement given the magento customer_id
 - blaster_write.rb writes n full customer records ( randomly generated ) as a post - 1 customer at a time
 - blaster_search.rb reads N full customer records as a single put statement given a json search query
-- Ignore the half written php script
+- api_checker.rb runs a short test cycle to see what ~ average api times are
+- api_cmd.rb is a skeleton; to be written later script
 
 To setup:
 - you need to create an integration ( system -> extensions: Integration ) & authorize
-- Copy the 4 tokens into your script
+- Copy the 4 tokens into your script ( blasters ) or update the default.yml
 
 To use with Chrome/Postman
 - copy the tokens as Oauth 1.0

@@ -18,6 +18,10 @@ Scripts
 To setup:
 - you need to create an integration ( system -> extensions: Integration ) & authorize
 - Copy the 4 tokens into your script ( blasters ) or update the default.yml
+- if you're on OSX ( 10.8/10.9 ) beware the ipv6 lookup issues with vhosts
+-- [Serverfault thread|http://serverfault.com/questions/321386/resolving-to-virtual-host-very-slow-on-mac-os-x-lion]
+-- set your VHOSTS from *:80 to 0.0.0.0:80
+-- Do not use a NAME.local vhost; use .dev or something else as there are some ipv6 implications [ not sure on this one though ]
 
 To use with Chrome/Postman
 - copy the tokens as Oauth 1.0

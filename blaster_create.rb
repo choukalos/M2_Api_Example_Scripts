@@ -16,7 +16,7 @@ TOKENSECRET    = "c134285b81adafee53eca6987316c16c"
 # 
 NUMTOGEN       = 50
 
-URL = "http://mage2.local/index.php/rest/default/V1/customerAccounts"
+URL = "http://mage2.dev/index.php/rest/default/V1/customerAccounts"
 
 if ARGV.count > 0
   numtogen = ARGV.shift
@@ -27,7 +27,7 @@ end
 
 
 
-@client = OAuth::Consumer.new CONSUMERKEY, CONSUMERSECRET, {:site=> "http://mage2.demo1" }
+@client = OAuth::Consumer.new CONSUMERKEY, CONSUMERSECRET, {:site=> "http://mage2.dev" }
 @token  = OAuth::AccessToken.new(@client, TOKEN, TOKENSECRET)
 
 # Functions

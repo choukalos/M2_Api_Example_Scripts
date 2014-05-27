@@ -15,9 +15,9 @@ NUMTOGEN       = 1
 PERPAGE        = 20
 PAGE           = 1
 
-URL = "http://mage2.local/index.php/rest/default/V1/customerAccounts/Search"
+URL = "http://mage2.dev/index.php/rest/default/V1/customerAccounts/Search"
 
-@client = OAuth::Consumer.new CONSUMERKEY, CONSUMERSECRET, {:site=> "http://mage2.demo1" }
+@client = OAuth::Consumer.new CONSUMERKEY, CONSUMERSECRET, {:site=> "http://mage2.dev" }
 @token  = OAuth::AccessToken.new(@client, TOKEN, TOKENSECRET)
 
 # Do the request

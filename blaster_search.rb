@@ -33,7 +33,7 @@ searchquery = {
                         },
                         {
                             "field" => "updated_at",
-                            "value" => "2014-04-21",
+                            "value" => "2014-04-20",
                             "condition_type" => "gt"
                         }
                     ]
@@ -43,11 +43,31 @@ searchquery = {
             "page_size" => PERPAGE
         }
 }
+# Check for update on timestamp
+searchquery2 = {
+  "searchCriteria" => {
+    "filterGroups" => [
+      {
+        "filters" => [
+          {
+            "field" => "updated_at",
+            "value" => "2014-06-23 20:11:40 ",
+            "condition_type" => "gt"
+          }
+        ]
+      }
+    ],
+    "current_page" => PAGE,
+    "page_size"    => PERPAGE
+  }
+  
+  
+}
 
 starttime = Time.now
 (1..NUMTOGEN).each do  |x|
   url = URL.to_s
-  puts @token.put(url,searchquery.to_json,{'Content-Type' => 'application/json','Accept' => 'application/json'}).body
+  puts @token.put(url,searchquery2.to_json,{'Content-Type' => 'application/json','Accept' => 'application/json'}).body
 end  
 endtime = Time.now
 puts "Processed #{NUMTOGEN} search requests in #{endtime - starttime} seconds!"

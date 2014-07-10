@@ -40,7 +40,7 @@ Sample Payloads - Thanks Anup!
 
 Single customer :  "condition_type": “eq"
 ============
-
+```
 {
     "searchCriteria": {
         "filterGroups": [
@@ -69,9 +69,9 @@ Single customer :  "condition_type": “eq"
         "page_size": 1
     }
 }
-
+```
 Multiple customers : updated_at example
-
+```
 {
 	"searchCriteria": {
 		"filterGroups": [
@@ -87,12 +87,12 @@ Multiple customers : updated_at example
 		"page_size":10
 	}
 }
-
+```
 
 
 Single customer :  "condition_type": "like"
 ============
-
+```
 {
     "searchCriteria": {
         "filterGroups": [
@@ -122,11 +122,11 @@ Single customer :  "condition_type": "like"
         "page_size": 1
     }
 }
-
+```
 
 Multiple Customers :  "condition_type": "like"
 ===============
-
+```
 {
     "searchCriteria": {
         "filterGroups": [
@@ -161,12 +161,14 @@ Multiple Customers :  "condition_type": "like"
         "page_size": 1
     }
 }
-
+```
 To create a customer it’s a POST request
 url:  http://mage2.demo1/index.php/rest/default/V1/customerAccounts
 
 Create Customer Example Payload
 ===========================
+
+```
 {
     "customerDetails": {
         "customer": {
@@ -222,3 +224,4 @@ Create Customer Example Payload
     },
     "password": "test@123"
 }
+```

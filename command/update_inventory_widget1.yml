@@ -1,0 +1,5 @@
+url:  /V1/stockItem/Widget1
+verb: POST
+req: 
+  qty:  999
+

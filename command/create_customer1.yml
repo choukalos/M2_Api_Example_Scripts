@@ -1,0 +1,23 @@
+url:  /V1/customerAccounts
+verb: POST
+req:
+	customerdetail:
+		customer: &id001
+		  firstname: TestGuy
+		  lastname: Test
+		  email: testguy1@test.com
+		  gender: 1
+		addresses:
+		  - street: [1 Test Street ]
+		    city: Austin
+			country_id: US
+			region:
+				region: Texas
+				region_id: 57
+				region_code: TX
+			postcode: 77777
+			telephone: 555555555
+			default_billing: true
+			default_shipping: true
+  		password: password123
+	

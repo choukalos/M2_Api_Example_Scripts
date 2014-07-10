@@ -6,76 +6,50 @@ require 'json'
 require 'date'
 require 'yaml'
 
-APIURLS = {
-  "customer"     => "/V1/customerAccounts/",
-  "search"       => "/V1/customerAccounts/Search"
-}
-NUMBER = 50
-
-# - ----- functions
-def generate_string(length)
-  string = ""
-  while string.length < length
-    string = ((('a'..'z').to_a)*3).shuffle[0,(rand(30).to_i)].join
-  end
-  return string
-end
-
-def generate_address
-  firstname        = generate_string(6)
-  lastname         = generate_string(6)
-  street           = ["1 Amber Drive"]
-  city             = "Austin"
-  country_id       = "US"
-  region           = { "region" => "Texas", "region_id" => 57, "region_code" => "TX" }
-  postcode         = "77777"
-  telephone        = "512-555-5555"
-  default_billing  = true
-  default_shipping = true
-  { :firstname => firstname, :lastname => lastname, :street => street, :city => city, :country_id => country_id, :region => region, 
-    :postcode => postcode, :telephone => telephone, :default_billing => default_billing, :default_shipping => default_shipping }
-end
+PERFORMANCE = true
+CONTENTTYPE = {'Content-Type' => 'application/json','Accept' => 'application/json' }
+# ----- Functions ---------
 
 
 
-def generate_customer(address)
-  address1  = address
-  firstname = generate_string(3)
-  lastname  = generate_string(4)
-  email     = generate_string(4) + '@'.to_s + generate_string(4) + '.com'
-  gender    = if (1 + rand(6)) > 3 then 0 else 1 end
-  password  = "password123"
-  customerdetail = { "firstname" => firstname, "lastname" => lastname, "email" => email, "gender" => gender }
-  customer       = { "customerDetails" => { "customer" => customerdetail, "addresses" => [ address1 ]}, "password" => password }
-  customer.to_json
-end
-# --------------------------------
+# ----- Main --------------
 
-if ARGV.count > 0
-  yamlfile = ARGV.shift
-  command  = ARGV.shift
+if ARGV.count > 1
+  configfile  = ARGV.shift
+  commandfile = ARGV.shift
 else
-  puts "api_cmd.rb SYSTEMCONFIG"
+  puts "api_cmd.rb CONFIG COMMAND"
+  puts "  CONFIG  = YAML configuration file "
+  puts "  COMMAND = YAML API command file  "
+  exit
 end
 
 # Config and setup tokens
-config = YAML.load_file(yamlfile)
+config = YAML.load_file(configfile)
 # setup token
 client = OAuth::Consumer.new config["consumerkey"], config["consumersecret"], {:site=> config["site"] }
 token  = OAuth::AccessToken.new(client, config["token"], config["tokensecret"])
+# Config and setup command
+command = YAML.load_file(commandfile)
+url     = config["baseurl"].to_s + command["url"].to_s
+verb    = command["verb"].to_s
+if command["req"] != nil then req = JSON.dump(command["req"]) else req = nil end
 
-# TODO add commands - for now just read 1st customer record
-
-#  Read calls  
-url        = config["baseurl"].to_s + APIURLS["customer"].to_s + command.to_s
-puts "Calling API url: #{url}"
 http_start = Time.now
-apicall    = token.get(url,{'Content-Type' => 'application/json','Accpet' => 'application/json' })
-http_end   = Time.now
-puts "Read,#{apicall.code},#{apicall.msg},#{http_end - http_start} "
-puts apicall.body
-
-  
-  
-  
+case verb
+  when /GET/i
+    res = token.get(url,CONTENTTYPE)
+  when /POST/i
+    res = token.post(url,CONTENTTYPE,req)
+  when /PUT/i
+    res = token.put(url,CONTENTTYPE,req)
+  when /DELETE/i
+    res = token.delete(url,CONTENTTYPE)
+  else
+    puts "Do not understand verb #{verb} "
+    exit
+end
+http_stop = Time.now
+puts "#{verb},#{url},#{res.code},#{res.msg},#{http_stop - http_start} "
+puts res.body  
   

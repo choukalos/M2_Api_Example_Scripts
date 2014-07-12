@@ -111,7 +111,7 @@ starttime = Time.now
   address   = generate_address
   customer  = generate_customer(address)
   http_start = Time.now
-  code       = @token.post(URL,customer,{'Content-Type' => 'application/json','Accpet' => 'application/json' }).code
+  code       = @token.post(URL,customer,{'Content-Type' => 'application/json','Accept' => 'application/json' }).code
   http_end   = Time.now
   puts " -- Create customer API call status: #{code} in #{http_end - http_start} seconds"
 end

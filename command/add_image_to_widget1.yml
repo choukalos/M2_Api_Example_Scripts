@@ -1,0 +1,14 @@
+url: /V1/products/Widget1/media
+verb: POST
+req:
+  productSku: Widget1
+  entry:
+    label: Widget1
+    types: ["image","thumbnail"]
+    position: 1
+    disabled: false
+  entryContent:
+    data: 
+    mimeType: image/jpeg
+    name: Widget1
+

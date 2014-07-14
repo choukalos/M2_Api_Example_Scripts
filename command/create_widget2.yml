@@ -1,0 +1,17 @@
+url: /V1/products
+verb: POST
+req:
+  price: "14.95"
+  weight: "2.1"
+  visibility: 4
+  status: 1
+  attributeSetID: 4
+  sku: Widget2
+  name: Widget2
+  typeId: simple
+  customAttributes:
+    - { attributeCode: description, value: description of Widget 2 }
+    - { attributeCode: category_ids, value: [ 2 , 5 ] }
+    - { attributeCode: tax_class_ids, value: 2 } 
+    - { attributeCode: url_key, value: Widget2 }
+    - { attributeCode: url_path, value: Widget2.html }

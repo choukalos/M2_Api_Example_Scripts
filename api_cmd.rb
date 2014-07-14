@@ -5,10 +5,15 @@ require 'oauth'
 require 'json'
 require 'date'
 require 'yaml'
+require 'base64'
 
 PERFORMANCE = true
 CONTENTTYPE = {'Content-Type' => 'application/json', 'Accept' => 'application/json' }
 # ----- Functions ---------
+def get_mime64_encoded(filename)
+  Base64.encode64(File.read(filename))
+end  
+
 def call_api(token,url,verb,req)
   http_start = Time.now
   case verb

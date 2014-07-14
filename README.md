@@ -1,4 +1,4 @@
-Collection of simple scripts that use Magento M2 customer service APIs
+Collection of simple scripts that use Magento M2 service APIs
 
 API Path
 - store BASE URL
@@ -9,11 +9,14 @@ API Path
 - for my local demo site it would be http://mage2.demo1/index.php/rest/default/
 
 Scripts
-- blaster_read.rb reads 1 full customer records as a get statement given the magento customer_id
-- blaster_write.rb writes n full customer records ( randomly generated ) as a post - 1 customer at a time
-- blaster_search.rb reads N full customer records as a single put statement given a json search query
 - api_checker.rb runs a short test cycle to see what ~ average api times are
-- api_cmd.rb is a skeleton; to be written later script
+- api_cmd.rb runs command files ( YAML ) to see response & average api times
+
+Details on API_CMD script
+- api_cmd.rb CONFIGURATION.yml command/COMMAND.yml
+-- where CONIGURATION.yml contains your tokens and base URL ( see default.yml for example )
+-- where COMMAND.yml contains url and verb with req being an optional object for put/post verbs
+-- command directory contains an example set of api uses
 
 To setup:
 - you need to create an integration ( system -> extensions: Integration ) & authorize

@@ -1,0 +1,7 @@
+calls:
+-   url:  /V1/customerAccounts/1
+    verb: GET
+-   url:  /V1/customerAccounts/2
+    verb: GET	
+-   url:  /V1/customerAccounts/3
+    verb: GET

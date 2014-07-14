@@ -1,0 +1,271 @@
+calls: 
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Abbot
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "1 Amber Drive"
+            telephone: 512-555-5555
+        customer: 
+          email: John.Abbot@test.com
+          firstname: John
+          gender: 1
+          lastname: Abbot
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Bob
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "11 Amber Drive"
+            telephone: 512-555-5551
+        customer: 
+          email: John.Bob@test.com
+          firstname: John
+          gender: 1
+          lastname: Bob
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Cob
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "13 Amber Drive"
+            telephone: 512-555-5552
+        customer: 
+          email: John.Cob@test.com
+          firstname: John
+          gender: 1
+          lastname: Cob
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Doe
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "11 Beer Drive"
+            telephone: 512-555-5511
+        customer: 
+          email: John.Doe@test.com
+          firstname: John
+          gender: 1
+          lastname: Doe
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Earls
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "12 Beer Drive"
+            telephone: 512-555-5521
+        customer: 
+          email: John.Earls@test.com
+          firstname: John
+          gender: 1
+          lastname: Earls
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Abbot
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "1 Amber Drive"
+            telephone: 512-555-5555
+        customer: 
+          email: John.Abbot@test.com
+          firstname: John
+          gender: 1
+          lastname: Abbot
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Bob
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "11 Amber Drive"
+            telephone: 512-555-5551
+        customer: 
+          email: John.Bob@test.com
+          firstname: John
+          gender: 1
+          lastname: Bob
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Cob
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "13 Amber Drive"
+            telephone: 512-555-5552
+        customer: 
+          email: John.Cob@test.com
+          firstname: John
+          gender: 1
+          lastname: Cob
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Doe
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "11 Beer Drive"
+            telephone: 512-555-5511
+        customer: 
+          email: John.Doe@test.com
+          firstname: John
+          gender: 1
+          lastname: Doe
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST
+  - 
+    req: 
+      customerDetails: 
+        addresses: 
+          - 
+            city: Austin
+            country_id: US
+            default_billing: true
+            default_shipping: true
+            firstname: John
+            lastname: Earls
+            postcode: "77777"
+            region: 
+              region: Texas
+              region_code: TX
+              region_id: 57
+            street: 
+              - "12 Beer Drive"
+            telephone: 512-555-5521
+        customer: 
+          email: John.Earls@test.com
+          firstname: John
+          gender: 1
+          lastname: Earls
+      password: password123
+    url: /V1/customerAccounts
+    verb: POST

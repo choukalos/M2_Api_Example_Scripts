@@ -1,5 +1,5 @@
 url:  /V1/stockItem/Widget1
-verb: POST
+verb: PUT
 req: 
-  qty:  999
+  qty:  999.00
 

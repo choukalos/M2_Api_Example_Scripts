@@ -1,8 +1,8 @@
 <?php
   // need to write.....
 
-  // PHP script to create a slew of random customers
-  // Use PECL OAuth extension
+  // PHP script to read a customer
+  // Use PECL OAuth extension ( )
   // Variables to replace
   $CONSUMERKey     = "fc6c444e70e64febd04f2b23a258f823";
   $CONSUMERSecret  = "47e985772ef6adcf3885478e1ec58476";

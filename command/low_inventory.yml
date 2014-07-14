@@ -1,3 +1,2 @@
 url:  /V1/stockItem/lowStock/
 verb: PUT
-req:  false

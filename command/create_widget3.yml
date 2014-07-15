@@ -1,0 +1,30 @@
+calls:
+  - url: /V1/products
+    verb: POST
+    req: 
+      product:
+        name: Widget3
+        price: "95.9500"
+        sku: Widget3
+        status: "1"
+        visibility: "4"
+        weight: "1.1000"
+        customAttributes:
+          - attributeCode: description
+            value: "This is my description of Widget 3"
+          - attributeCode: tax_class_ids
+            value: 2
+# Breaks if include this attribute code with sub object array value 
+#      - attributeCode: quantity_and_stock_status
+#        value:
+#          stockItem:
+#            is_in_stock: true
+#            qty: "999.0"
+# Breaks if include this attribute code with sub array
+#      - attributeCode: category_ids
+#        value: [ "2", "5" ]
+#
+# .:  We shouldn't be return structures with customAttributes need to change/fix
+#     have to call seperate apis to assign to category and inventory and media
+
+  

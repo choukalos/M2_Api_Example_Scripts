@@ -1,0 +1,8 @@
+url:  /V1/stockItem/lowStock/
+verb: PUT
+req:
+  lowStockCriteria:
+    qty: "5.0"
+    pageSize: "20"
+    currentPage: "1"
+

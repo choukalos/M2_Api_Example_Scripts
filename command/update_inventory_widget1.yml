@@ -1,0 +1,18 @@
+url:  /V1/stockItem/Widget1
+verb: POST
+req: 
+  stockItem:
+    qty: "999.00"
+    minQty: "0.00"
+    isQtyDecimal: false
+    backorders: false
+    minSalesQty: "1.00"	
+    maxSaleQty: "0.00"
+    isInStock: true
+    lowStockDate: false
+    notifyStockQty: "5.00"		
+    manageStock: true
+    stockStatusChangedAuto: false
+    qtyIncrements: "0.000"
+    enableQtyIncrements: true
+    isDecimalDivided: false		  

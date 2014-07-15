@@ -1,0 +1,3 @@
+url:   /V1/products/
+verb:  GET
+param: "?searchCriteria[filterGroups][0][filters][field]=sku&searchCriteria[filterGroups][0][filters][0][value]=Widget1&searchCriteria[sort_orders][id]=1"

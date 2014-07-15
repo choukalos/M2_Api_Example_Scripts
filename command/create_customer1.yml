@@ -1,0 +1,26 @@
+url:  /V1/customerAccounts
+verb: POST
+req: 
+    customerDetails: 
+      customer: 
+        firstname: "nykkeigdti"
+        lastname: "xzqsddud"
+        email: "vhoingfyncmuzaregn@puuflxscrnqabvh.com"
+        gender: 1
+      addresses: 
+        - 
+          firstname: "pmaxvtlresufqyip"
+          lastname: "wswiioucqbbrgkwtnkrgjxotpye"
+          street: 
+            - "1 Amber Drive"
+          city: "Austin"
+          country_id: "US"
+          region: 
+            region: "Texas"
+            region_id: 57
+            region_code: "TX"
+          postcode: "77777"
+          telephone: "512-555-5555"
+          default_billing: true
+          default_shipping: true
+    password: "password123"

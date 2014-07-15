@@ -1,0 +1,12 @@
+url: /V1/customerAccounts/Search
+verb: PUT
+param: "?fields=customer[id,email]"
+req:
+  searchCriteria:
+    filterGroups:
+    - filters:
+      - field: updated_at
+        value: '2014-06-23 20:11:40 '
+        condition_type: gt
+    current_page: 1
+    page_size: 20

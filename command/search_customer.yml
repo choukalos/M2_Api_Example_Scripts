@@ -1,0 +1,14 @@
+url: /V1/customerAccounts/Search
+verb: PUT
+req:
+  searchCriteria:
+    filterGroups:
+    - filters:
+      - field: email
+        value: '%test%'
+        condition_type: like
+      - field: updated_at
+        value: '2014-04-20'
+        condition_type: gt
+    current_page: 1
+    page_size: 20

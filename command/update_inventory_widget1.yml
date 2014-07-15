@@ -1,5 +1,4 @@
 url:  /V1/stockItem/Widget1
-<<<<<<< HEAD
 verb: POST
 req: 
   stockItem:
@@ -17,9 +16,3 @@ req:
     qtyIncrements: "0.000"
     enableQtyIncrements: true
     isDecimalDivided: false		  
-=======
-verb: PUT
-req: 
-  qty:  999.00
-
->>>>>>> f0c25be3796b809f6c3edf0abb889cae08784a7e

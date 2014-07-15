@@ -14,36 +14,29 @@ Scripts
 
 Details on API_CMD script
 - api_cmd.rb CONFIGURATION.yml command/COMMAND.yml
-<<<<<<< HEAD
 - where CONIGURATION.yml contains your tokens and base URL ( see default.yml for example )
 - where COMMAND.yml contains url and verb with req being an optional object for put/post verbs
 - command directory contains an example set of api uses
-=======
 -- where CONIGURATION.yml contains your tokens and base URL ( see default.yml for example )
 -- where COMMAND.yml contains url and verb with req being an optional object for put/post verbs
 -- command directory contains an example set of api uses
->>>>>>> f0c25be3796b809f6c3edf0abb889cae08784a7e
 
 To setup:
 - you need to create an integration ( system -> extensions: Integration ) & authorize
 - Copy the 4 tokens into your script ( blasters ) or update the default.yml
 - if you're on OSX ( 10.8/10.9 ) beware the ipv6 lookup issues with vhosts
-<<<<<<< HEAD
 - [Serverfault thread|http://serverfault.com/questions/321386/resolving-to-virtual-host-very-slow-on-mac-os-x-lion]
 - set your VHOSTS from *:80 to 0.0.0.0:80
 - Do not use a NAME.local vhost; use .dev or something else as there are some ipv6 implications [ not sure on this one though ]
-=======
--- [Serverfault thread|http://serverfault.com/questions/321386/resolving-to-virtual-host-very-slow-on-mac-os-x-lion]
--- set your VHOSTS from *:80 to 0.0.0.0:80
--- Do not use a NAME.local vhost; use .dev or something else as there are some ipv6 implications [ not sure on this one though ]
->>>>>>> f0c25be3796b809f6c3edf0abb889cae08784a7e
+- [Serverfault thread|http://serverfault.com/questions/321386/resolving-to-virtual-host-very-slow-on-mac-os-x-lion]
+- set your VHOSTS from *:80 to 0.0.0.0:80
+- Do not use a NAME.local vhost; use .dev or something else as there are some ipv6 implications [ not sure on this one though ]
 
 To use with Chrome/Postman
 - copy the tokens as Oauth 1.0
 - select add params to header
 - select auto add parameters
 - add parameters
-<<<<<<< HEAD
 - Content-Type = application/json
 - Accept = application/json
 
@@ -58,13 +51,11 @@ Until documentation is published there are a few tricks to figuring out what's r
 - note that the 1st letter of an object should be lower case in your req ( objects can be nested )
 - while attributes of an object may be all upper case in the DTO, first letter is always lower case with other letters of words being upper case
 
-=======
 -- Content-Type = application/json
 -- Accept = application/json
 
 then add to the path/etc and start working it.
 
->>>>>>> f0c25be3796b809f6c3edf0abb889cae08784a7e
 Some example payloads:
 Sample JSON Payloads for Customer Search
 

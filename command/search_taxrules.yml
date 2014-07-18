@@ -1,0 +1,11 @@
+url: /V1/taxRules/Search
+verb:  PUT
+req:
+  searchCriteria:
+    filterGroups:
+      - filters:
+        - field: code
+          value: '%'
+          condition_type: like
+    current_page: 1
+    page_size: 20

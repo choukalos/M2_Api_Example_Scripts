@@ -1,2 +1,5 @@
-url: /V1/stockItem/status/Widget1
-verb: GET
+calls:
+  - url: /V1/stockItem/status/Widget1
+    verb: GET
+  - url: /V1/stockItem/Widget1
+    verb: GET

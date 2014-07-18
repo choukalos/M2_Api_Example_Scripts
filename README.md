@@ -51,15 +51,27 @@ Until documentation is published there are a few tricks to figuring out what's r
 - note that the 1st letter of an object should be lower case in your req ( objects can be nested )
 - while attributes of an object may be all upper case in the DTO, first letter is always lower case with other letters of words being upper case
 
--- Content-Type = application/json
--- Accept = application/json
+API call headers should include:
+- Content-Type = application/json
+- Accept = application/json
 
-then add to the path/etc and start working it.
+Magento 2 API framework features 
 
-Some example payloads:
-Sample JSON Payloads for Customer Search
+============
+```
+Result Field Filtering
+- Magento can return only the fields a client wants by adding a parameter to the URL call
+- Format is:  topLevelObjects[CSVoffields,nestedObjects[field1,field2]],simpleField1
+- ex : ?fields=customer[id,email],sampleField,addresses[city,postcode,region[region_code,region]]
 
-Sample Payloads - Thanks Anup!
+Region Data used for API Calls
+- Region ID is used by both customer & tax API calls.
+- Region data is loaded into directory_country_region table in the database
+- ISO country info is loaded into directory_country table in the database
+
+```
+
+Some example payloads for Customer Search (In JSON) - Thanks Anup!
 
 Single customer :  "condition_type": “eq"
 ============

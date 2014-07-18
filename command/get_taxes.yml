@@ -1,0 +1,17 @@
+calls:
+  - url:  /V1/taxRate/1
+    verb: GET
+  - url:  /V1/taxRate/2
+    verb: GET
+  - url:  /V1/taxRate/3
+    verb: GET
+  - url:  /V1/taxRate/4
+    verb: GET
+  - url:  /V1/taxClass/2
+    verb: GET
+  - url:  /V1/taxClass/3
+    verb: GET
+  - url:  /V1/taxRules/1
+    verb: GET
+  - url:  /V1/taxRules/2
+    verb: GET

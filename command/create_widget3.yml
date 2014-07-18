@@ -14,17 +14,40 @@ calls:
             value: "This is my description of Widget 3"
           - attributeCode: tax_class_ids
             value: 2
-# Breaks if include this attribute code with sub object array value 
-#      - attributeCode: quantity_and_stock_status
-#        value:
-#          stockItem:
-#            is_in_stock: true
-#            qty: "999.0"
-# Breaks if include this attribute code with sub array
-#      - attributeCode: category_ids
-#        value: [ "2", "5" ]
-#
-# .:  We shouldn't be return structures with customAttributes need to change/fix
-#     have to call seperate apis to assign to category and inventory and media
-
-  
+  - url: /V1/stockItem
+    verb: POST
+    req:
+      stockItem:
+        qty: "5.0"
+        minQty: "0.0"
+        useMinQty: True
+        isQtyDecimal: False
+        backorders: False
+        useConfigBackorders: True
+        minSalesQty: "1.0"
+        useConfigMinSaleQty: True
+        maxSaleQty: "0.00"
+        useConfigMaxSaleQty: True
+        isInStock: True
+        useConfigNotifyStockQty: True
+        manageStock: True
+        useConfigManageStock: True
+        stockStatusChangedAuto: False
+        useConfigQtyIncrements: True
+        qtyIncrements: "0.00"
+        useConfigEnableQtyInc: True
+        enableQtyIncrements: False
+        isDecimalDivided: False
+  - url: /V1/products/:Widget3/media
+    verb: POST
+    req:
+      productSku:  Widget3
+      entry:
+        label: My Product Pic
+        types: ["image","thumbnail"]
+        position: 1
+        disabled: false
+      entryContent:
+        data: "base64encoded data"
+        mimeType: image/jpeg
+        name: myproductpic

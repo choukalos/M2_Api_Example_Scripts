@@ -1,6 +1,6 @@
 url: /V1/customerAccounts/Search
 verb: PUT
-param: "?fields=customer[id,email]"
+param: "?fields=items[customer[id,email],addresses[city]]"
 req:
   searchCriteria:
     filterGroups:

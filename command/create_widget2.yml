@@ -13,10 +13,11 @@ req:
     customAttributes:
       - attributeCode: description
         value: description of Widget 2
-      - attributeCode: category_ids
-        value: 
-          - 2
-          - 5
+# BUG:  Will be fixed soon...
+#      - attributeCode: category_ids
+#        value: 
+#          - 2
+#          - 5
       - attributeCode: tax_class_ids
         value: "2"
       - attributeCode: url_key

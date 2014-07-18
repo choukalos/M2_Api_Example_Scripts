@@ -1,0 +1,12 @@
+url: /V1/taxClass/search
+verb: PUT
+req:
+  searchCriteria:
+    filterGroups:
+      - filters:
+        - field: taxClassId
+          value: '%'
+          condition_type: like
+    current_page: 1
+    page_size:20
+	

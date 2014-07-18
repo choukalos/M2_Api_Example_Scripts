@@ -1,0 +1,49 @@
+calls:
+  -
+    url: /V1/taxRate
+    verb: POST
+    req:
+      taxRate:
+        country_id: US
+        region_id:  2
+        region_name: AK
+        postcode: "*"
+        code: US-AK-*-Rate 1
+        percentage_rate: "4.5"
+  -
+    url: /V1/taxRate
+    verb:  POST
+    req:
+      taxRate:
+        country_id: FR
+        postcode: "*"
+        code: FR-Red-VAT
+        percentage_rate: "7.5"
+  -
+    url: /V1/taxRate
+    verb: POST
+    req:
+      taxRate:
+        country_id: DE
+        postcode: "*"
+        code: DE-Red-VAT
+        percentage_rate: "9.0"	
+  -
+    url: /V1/taxClass
+    verb: POST
+    req:
+      taxClass:
+        className:  "Reduced Rate VAT"
+        classType:  "PRODUCT"   
+  -
+    url: /V1/taxRules
+    verb: POST
+    req:
+      rule:
+        code:  NewRule
+        customerTaxClassIds: [ "3" ]
+        productTaxClassIds: [ "4" ]
+        taxRateIds: ["4","5","6"]
+        priority: 0
+        sortOrder: 0
+        calculateSubtotal: 0						
